@@ -1,9 +1,9 @@
 package ifsc.poo;
 
 public abstract class Forma implements Propriedades {
-    private boolean preenchida;
-    private int tamanho;
-    private static int numFormas = 0;
+    protected boolean preenchida;
+    protected int tamanho;
+    protected static int numFormas = 0;
 
     public Forma(boolean preenchida, int tamanho) {
         // padrão
