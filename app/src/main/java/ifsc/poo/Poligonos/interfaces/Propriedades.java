@@ -1,6 +1,6 @@
 package ifsc.poo;
 
-public interface propriedades {
+public interface Propriedades {
     // Define os métodos que devem ser implementados pelas classes que usam esta interface
     void aumentarTamanho();
     void diminuirTamanho();

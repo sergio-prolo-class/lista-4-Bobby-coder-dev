@@ -1,1 +1,5 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/14jV-K72)
+# Lista 4 - Aplicativo de desenho vetorial
+
+## Descrição
+
+A aplicação a ser desenvolvida deve permitir o usuário desenhar diversas formas geométricas na tela do computador através do uso do mouse e teclado.O objetivo dessa aplicação é utilizar de forma efetiva o polimorfismo para imprimir e mover diversas figuras na tela, bem como processar valores a partir delas.
