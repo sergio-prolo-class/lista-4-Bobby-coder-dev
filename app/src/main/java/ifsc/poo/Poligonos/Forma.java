@@ -7,28 +7,9 @@ public abstract class Forma implements Propriedades {
 
     public Forma(boolean preenchida, int tamanho) {
         // padrão
-        this.preenchida = false;
-        this.tamanho = 50;
+        this.preenchida = preenchida;
+        this.tamanho = tamanho;
         numFormas++;
-    }
-
-    @Override
-    public void aumentarTamanho() {
-        if (tamanho < 200) {
-            this.tamanho += 10;
-        }
-    }
-
-    @Override
-    public void diminuirTamanho() {
-        if (tamanho > 10) {
-            this.tamanho -= 10;
-        }
-    }
-
-    @Override
-    public void alterarPreenchimento() {
-        this.preenchida = !this.preenchida;
     }
 
     @Override

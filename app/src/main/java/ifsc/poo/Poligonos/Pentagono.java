@@ -5,7 +5,7 @@ public class Pentagono extends Forma implements Informacoes {
 
     public Pentagono(boolean preenchida, int tamanho, double lado) {
         super(preenchida, tamanho);
-        this.lado = lado;
+        this.lado = 2 * getTamanho() * Math.sin(Math.PI / 5);
     }
 
     @Override

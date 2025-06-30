@@ -5,7 +5,7 @@ public class Quadrado extends Forma implements Informacoes {
 
     public Quadrado(boolean preenchida, int tamanho, double lado) {
         super(preenchida, tamanho);
-        this.lado = lado;
+        this.lado = 2 * getTamanho() * Math.sin(Math.PI / 4);
     }
 
     @Override

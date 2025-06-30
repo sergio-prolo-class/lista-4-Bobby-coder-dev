@@ -2,46 +2,101 @@ package ifsc.poo;
 
 import edu.princeton.cs.algs4.Draw;
 import edu.princeton.cs.algs4.DrawListener;
+import java.awt.event.KeyEvent;
 
 public class App {
-
     public static void main(String[] args) {
-        Draw draw = new Draw();
+        Desenhar desenhar = new Desenhar();
         Comandos comandos = new Comandos();
 
-        draw.addListener(new DrawListener() {
+        // Adiciona o listener ao Draw
+        desenhar.getDraw().addListener(new DrawListener() {
             @Override
-            public void keyTyped(char c) {
-        
-            }
+            public void keyPressed(int keyCode) {
+                switch (keyCode) {
 
-            @Override
-            public void keyPressed(int keycode) {
-               
-                switch (keycode) {
-                    case 112: // F1
-                        comandos.setFormaSelecionada(Quadrado.class);
-                        System.out.println("Quadrado selecionado");
+                    // Formas
+
+                    case KeyEvent.VK_F1:
+                        comandos.setFormaSelecionada(0);
+                        System.out.println("Forma selecionada: Círculo");
                         break;
-                    case 113: // F2
-                        comandos.setFormaSelecionada(Pentagono.class);
-                        System.out.println("Pentágono selecionado");
+                    case KeyEvent.VK_F2:
+                        comandos.setFormaSelecionada(1);
+                        System.out.println("Forma selecionada: Quadrado");
                         break;
-                    case 114: // F3
-                        comandos.setFormaSelecionada(Hexagono.class);
-                        System.out.println("Hexágono selecionado");
+                    case KeyEvent.VK_F3:
+                        comandos.setFormaSelecionada(2);
+                        System.out.println("Forma selecionada: Pentágono");
                         break;
-                    case 115: // F4
-                        comandos.setFormaSelecionada(Circulo.class);
-                        System.out.println("Círculo selecionado");
+                    case KeyEvent.VK_F4:
+                        comandos.setFormaSelecionada(3);
+                        System.out.println("Forma selecionada: Hexágono");
+                        break;
+
+                    // Cores
+                    
+                    case KeyEvent.VK_F5:
+                        comandos.setCor(0);
+                        System.out.println("Cor selecionada: Preto");
+                        break;
+                    case KeyEvent.VK_F6:
+                        comandos.setCor(1);
+                        System.out.println("Cor selecionada: Azul");
+                        break;
+                    case KeyEvent.VK_F7:
+                        comandos.setCor(2);
+                        System.out.println("Cor selecionada: Verde");
+                        break;
+                    case KeyEvent.VK_F8:
+                        comandos.setCor(3);
+                        System.out.println("Cor selecionada: Roxo");
+                        break;
+
+                    // Mover figuras
+
+
+                    case KeyEvent.VK_LEFT:
+                        //comandos.moverFiguras(-delta, 0);
+                        break;
+                    case KeyEvent.VK_RIGHT:
+                        //comandos.moverFiguras(delta, 0);
+                        break;
+                    case KeyEvent.VK_UP:
+                        //comandos.moverFiguras(0, delta);
+                        break;
+                    case KeyEvent.VK_DOWN:
+
+                        //comandos.moverFiguras(0, -delta);
                         break;
                 }
             }
 
-            // Implemente outros métodos do DrawListener conforme necessário
-            @Override public void mousePressed(double x, double y) {}
-            @Override public void mouseDragged(double x, double y) {}
-            @Override public void mouseReleased(double x, double y) {}
+            @Override
+            public void keyTyped(char c) {
+                switch (c) {
+                    case 'f':
+                        comandos.alterarPreenchida();
+                        System.out.println("Preenchimento alterado: " + (comandos.getPreenchida() ? "Preenchido" : "Não preenchido"));
+                        break;
+                    case 'q':
+                        comandos.diminuirTamanho();
+                        System.out.println("Tamanho: " + comandos.getTamanho());
+                        break;
+                    case 'w':
+                        comandos.aumentarTamanho();
+                        System.out.println("Tamanho: " + comandos.getTamanho());
+                        break;
+                    case 'c':
+                        comandos.limparTela();
+                        break;
+                    case 'p':
+                        comandos.mostarInformacoes();
+                }
+            }
+
+            @Override
+            public void mousePressed(double x, double y) {}
         });
     }
 }
