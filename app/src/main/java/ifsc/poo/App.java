@@ -96,7 +96,9 @@ public class App {
             }
 
             @Override
-            public void mousePressed(double x, double y) {}
+            public void mousePressed(double x, double y) {
+                
+            }
         });
     }
 }

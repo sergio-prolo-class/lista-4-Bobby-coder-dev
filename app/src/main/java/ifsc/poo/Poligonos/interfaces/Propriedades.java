@@ -1,6 +1,6 @@
 package ifsc.poo;
 
 public interface Propriedades {
-    int getTamanho();
-    boolean isPreenchida();
+    double getLado();
+    void setLado(double lado);
 }

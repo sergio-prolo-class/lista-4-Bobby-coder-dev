@@ -1,6 +1,6 @@
 package ifsc.poo;
 
-public class Hexagono extends Forma implements Informacoes {
+public class Hexagono extends Forma implements Informacoes, Propriedades {
     private double lado;
 
     public Hexagono(boolean preenchida, int tamanho, double lado) {
@@ -18,10 +18,12 @@ public class Hexagono extends Forma implements Informacoes {
         return 6 * lado;
     }
 
+    @Override
     public double getLado() {
         return lado;
     }
 
+    @Override
     public void setLado(double lado) {
         this.lado = lado;
     }

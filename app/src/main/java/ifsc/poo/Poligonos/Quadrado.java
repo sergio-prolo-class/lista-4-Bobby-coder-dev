@@ -1,6 +1,6 @@
 package ifsc.poo;
 
-public class Quadrado extends Forma implements Informacoes {
+public class Quadrado extends Forma implements Informacoes, Propriedades {
     private double lado;
 
     public Quadrado(boolean preenchida, int tamanho, double lado) {
@@ -18,10 +18,12 @@ public class Quadrado extends Forma implements Informacoes {
         return 4 * lado;
     }
 
+    @Override
     public double getLado() {
         return lado;
     }
 
+    @Override
     public void setLado(double lado) {
         this.lado = lado;
     }

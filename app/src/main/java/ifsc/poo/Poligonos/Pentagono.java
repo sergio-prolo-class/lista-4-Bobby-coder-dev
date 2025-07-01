@@ -1,6 +1,6 @@
 package ifsc.poo;
 
-public class Pentagono extends Forma implements Informacoes {
+public class Pentagono extends Forma implements Informacoes, Propriedades {
     private double lado;
 
     public Pentagono(boolean preenchida, int tamanho, double lado) {
@@ -18,10 +18,12 @@ public class Pentagono extends Forma implements Informacoes {
         return 5 * lado;
     }
 
+    @Override
     public double getLado() {
         return lado;
     }
 
+    @Override
     public void setLado(double lado) {
         this.lado = lado;
     }
