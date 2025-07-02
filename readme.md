@@ -68,7 +68,7 @@ Esta aplicação permite ao usuário desenhar diversas formas geométricas na te
 
 ## Diagrama UML
 
-
+```mermaid
 classDiagram
     direction TB
 
