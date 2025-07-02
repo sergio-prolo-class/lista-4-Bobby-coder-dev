@@ -156,4 +156,6 @@ classDiagram
     Hexagono ..|> Propriedades
 ```
 
+![Diagrama UML](docs/uml.png)
+
 Desenvolvido para a disciplina de Programação Orientada a Objetos - IFSC São José.
