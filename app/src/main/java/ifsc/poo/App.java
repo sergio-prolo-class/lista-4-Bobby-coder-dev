@@ -58,18 +58,20 @@ public class App {
                     // Mover figuras
 
 
+                    // Movimento de 5 pixels para maior impressão visual
+
                     case KeyEvent.VK_LEFT:
-                        //comandos.moverFiguras(-delta, 0);
+                        comandos.moverFiguras(-5, 0);
                         break;
                     case KeyEvent.VK_RIGHT:
-                        //comandos.moverFiguras(delta, 0);
+                        comandos.moverFiguras(5, 0);
                         break;
                     case KeyEvent.VK_UP:
-                        //comandos.moverFiguras(0, delta);
+                        comandos.moverFiguras(0, 5);
                         break;
                     case KeyEvent.VK_DOWN:
 
-                        //comandos.moverFiguras(0, -delta);
+                        comandos.moverFiguras(0, -5);
                         break;
                 }
             }
@@ -93,7 +95,7 @@ public class App {
                         comandos.limparTela();
                         break;
                     case 'p':
-                        //comandos.mostarInformacoes();
+                        comandos.mostarInformacoes();
                     case 'z':
                         System.out.println("Saindo do desenho.");
                         desenhar.getDraw().close();

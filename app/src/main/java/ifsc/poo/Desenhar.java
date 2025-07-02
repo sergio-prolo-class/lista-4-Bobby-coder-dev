@@ -61,4 +61,8 @@ public class Desenhar {
         }
         draw.circle(x, y, raio);
     }
+
+    public void limparTela() {
+        draw.clear();
+    }
 }

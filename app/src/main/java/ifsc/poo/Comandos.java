@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Comandos {
-    private static final int TAMANHO_MINIMO = 50; // tamanho padrão das formas
+    private static final int TAMANHO_MINIMO = 10; // tamanho padrão das formas
     private static final int TAMANHO_MAXIMO = 200; // tamanho máximo das formas
 
     private List<Forma> figuras = new ArrayList<>();
@@ -56,9 +56,18 @@ public class Comandos {
     }
 
     public void limparTela(){
-        //desenhar.limparTela();
+        figuras.clear();
+        desenhar.limparTela();
     }
 
+    public void moverFiguras(int deltaX, int deltaY) {
+        desenhar.limparTela();
+        for (Forma figura : figuras) {
+            figura.x += deltaX;
+            figura.y += deltaY;
+            desenhar.desenharForma(figura);
+        }
+    }
     // Gets
 
     public int getFormaSelecionada() {
@@ -100,4 +109,13 @@ public class Comandos {
             desenhar.desenharForma(forma);
         }
     }
-}
+
+
+// informações 
+
+    public void mostarInformacoes() {
+        System.out.println("Número de formas desenhadas: " + Forma.numFormas);
+        int somaPerimetros = 0;
+        
+
+    }
