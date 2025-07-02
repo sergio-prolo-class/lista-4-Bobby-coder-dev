@@ -2,10 +2,11 @@ package ifsc.poo;
 
 public class Hexagono extends Forma implements Informacoes, Propriedades {
     private double lado;
+    private int numeroLados = 6;
 
-    public Hexagono(boolean preenchida, int tamanho, double lado) {
-        super(preenchida, tamanho);
-        this.lado = 2 * getTamanho() * Math.sin(Math.PI / 6);
+    public Hexagono(int x, int y, int tamanho, int indiceCor, boolean preenchida) {
+        super(x, y, tamanho, indiceCor, preenchida);
+        this.lado = 2 * getTamanho() * Math.sin(Math.PI / numeroLados);
     }
 
     @Override
@@ -26,5 +27,10 @@ public class Hexagono extends Forma implements Informacoes, Propriedades {
     @Override
     public void setLado(double lado) {
         this.lado = lado;
+    }
+    
+    @Override
+    public int getNumLados() {
+        return numeroLados;
     }
 }

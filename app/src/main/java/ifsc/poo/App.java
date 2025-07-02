@@ -7,7 +7,9 @@ import java.awt.event.KeyEvent;
 public class App {
     public static void main(String[] args) {
         Desenhar desenhar = new Desenhar();
-        Comandos comandos = new Comandos();
+        Comandos comandos = new Comandos(desenhar);
+
+        System.out.println("Desenho iniciado. Digite \"z\" para sair.");
 
         // Adiciona o listener ao Draw
         desenhar.getDraw().addListener(new DrawListener() {
@@ -50,7 +52,7 @@ public class App {
                         break;
                     case KeyEvent.VK_F8:
                         comandos.setCor(3);
-                        System.out.println("Cor selecionada: Roxo");
+                        System.out.println("Cor selecionada: Laranja");
                         break;
 
                     // Mover figuras
@@ -91,13 +93,18 @@ public class App {
                         comandos.limparTela();
                         break;
                     case 'p':
-                        comandos.mostarInformacoes();
+                        //comandos.mostarInformacoes();
+                    case 'z':
+                        System.out.println("Saindo do desenho.");
+                        desenhar.getDraw().close();
+                        System.exit(0);
+                        break;
                 }
             }
 
             @Override
             public void mousePressed(double x, double y) {
-                
+                comandos.desenharForma((int) x, (int) y);
             }
         });
     }

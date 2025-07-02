@@ -1,7 +1,8 @@
 package ifsc.poo;
 import edu.princeton.cs.algs4.DrawListener;
 import java.awt.event.KeyEvent;
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Comandos {
     private static final int TAMANHO_MINIMO = 50; // tamanho padrão das formas
@@ -11,15 +12,15 @@ public class Comandos {
     private int formaSelecionada; // 0: circulo, 1: quadrado, 2: pentágono, 3: hexágono
     private int indiceCor; // 0: preto, 1: azul, 2: verde, 3: roxo
     private boolean preenchida; // true: preenchida, false: não preenchida
-    private int tamanho; // tamanho da forma, padrão 50
-    private Desenhar desenhar; // instância da classe Desenhar
+    private int tamanho; 
+    private Desenhar desenhar; 
 
-    public Comandos() {
+    public Comandos(Desenhar desenhar) {
         this.formaSelecionada = 0; 
         this.indiceCor = 0;
         this.preenchida = false;
         this.tamanho = 50;
-        this.desenhar = new Desenhar();
+        this.desenhar = desenhar;
     }
 
     // Sets
@@ -55,11 +56,7 @@ public class Comandos {
     }
 
     public void limparTela(){
-        desenhar.limparTela();
-    }
-
-    public void mostarInformacoes() {
-        
+        //desenhar.limparTela();
     }
 
     // Gets
@@ -78,5 +75,29 @@ public class Comandos {
 
     public int getCor() {
         return this.indiceCor;
+    }
+
+    // Desenho
+    
+    public void desenharForma(int x, int y) {
+        Forma forma = null;
+        switch (formaSelecionada) {
+            case 0:
+                forma = new Circulo(x, y, tamanho, indiceCor, preenchida);
+                break;
+            case 1:
+                forma = new Quadrado(x, y, tamanho, indiceCor, preenchida);
+                break;
+            case 2:
+                forma = new Pentagono(x, y, tamanho, indiceCor, preenchida);
+                break;
+            case 3:
+                forma = new Hexagono(x, y, tamanho, indiceCor, preenchida);
+                break;
+        }
+        if (forma != null) {
+            figuras.add(forma);
+            desenhar.desenharForma(forma);
+        }
     }
 }

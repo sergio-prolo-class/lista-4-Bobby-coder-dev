@@ -1,8 +1,8 @@
 package ifsc.poo;
 
 public class Circulo extends Forma implements Informacoes {
-    public Circulo(boolean preenchida, int tamanho) {
-        super(preenchida, tamanho);
+    public Circulo(int x, int y, int tamanho, int indiceCor, boolean preenchida) {
+        super(x, y, tamanho, indiceCor, preenchida);
     }
 
     @Override
