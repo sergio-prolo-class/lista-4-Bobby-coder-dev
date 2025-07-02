@@ -114,8 +114,15 @@ public class Comandos {
 // informações 
 
     public void mostarInformacoes() {
-        System.out.println("Número de formas desenhadas: " + Forma.numFormas);
-        int somaPerimetros = 0;
-        
+        System.out.println("Número de formas desenhadas: " + figuras.size());
+        double somaPerimetros = 0;
+        double somaAreas = 0;
+        for (Forma figura : figuras) {
+            somaPerimetros += figura.calcularPerimetro();
+            somaAreas += figura.calcularArea();
+        }
+        System.out.println("Soma dos perímetros: " + somaPerimetros);
+        System.out.println("Area media: " + (somaAreas / figuras.size()));
 
     }
+}

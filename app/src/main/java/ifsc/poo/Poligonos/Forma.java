@@ -1,12 +1,11 @@
 package ifsc.poo;
 
-public abstract class Forma {
+public abstract class Forma implements Informacoes {
     protected boolean preenchida;
     protected int tamanho;
     protected int x;
     protected int y;
     protected int indiceCor;
-    protected static int numFormas = 0;
 
     public Forma(int x, int y,  int tamanho, int indiceCor, boolean preenchida) {
         // padrão
@@ -15,8 +14,6 @@ public abstract class Forma {
         this.tamanho = tamanho;
         this.indiceCor = indiceCor;
         this.preenchida = preenchida;
-        // incrementa o número de formas
-        numFormas++;
     }
 
     public int getTamanho() {

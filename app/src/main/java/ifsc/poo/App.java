@@ -96,6 +96,7 @@ public class App {
                         break;
                     case 'p':
                         comandos.mostarInformacoes();
+                        break;
                     case 'z':
                         System.out.println("Saindo do desenho.");
                         desenhar.getDraw().close();
