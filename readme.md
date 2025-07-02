@@ -7,7 +7,7 @@ Esta aplicação permite ao usuário desenhar diversas formas geométricas na te
 ## Funcionalidades
 
 - Desenho de figuras (Círculo, Quadrado, Pentágono, Hexágono) com clique do mouse.
-- Seleção de figura (F1-F4) e cor (F5-F8) pelo teclado.
+- Seleção de figura (F1-F4) e cor (F5-F8) pelo teclado.(Preto, Azul, Verde, Laranja)
 - Alternância entre modo preenchido e vazado (tecla `F`).
 - Ajuste do tamanho das figuras (`Q` diminui, `W` aumenta).
 - Movimento de todas as figuras com as setas do teclado.
@@ -155,7 +155,5 @@ classDiagram
     Pentagono ..|> Propriedades
     Hexagono ..|> Propriedades
 ```
-
-![Diagrama UML](docs/uml.png)
 
 Desenvolvido para a disciplina de Programação Orientada a Objetos - IFSC São José.
